@@ -161,5 +161,13 @@ class Toko extends BaseController
 
         }
     }
+    public function streetview($id)
+    {
+        $data = [
+            'data' => $this->TokoModel->getDataById($id)[0]
+        ];
+
+        return view('streetview', $data);
+    }
 
 }

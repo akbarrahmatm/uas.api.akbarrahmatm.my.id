@@ -37,6 +37,7 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/toko/list', 'Toko::list');
 $routes->get('/toko/detail/(:num)', 'Toko::detail/$1');
+$routes->get('/toko/streetview/(:num)', 'Toko::streetview/$1');
 $routes->post('/toko/add', 'Toko::add');
 $routes->post('/toko/update', 'Toko::update');
 $routes->post('/toko/delete', 'Toko::delete');

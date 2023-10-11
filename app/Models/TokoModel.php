@@ -9,7 +9,7 @@ class TokoModel extends Model
     protected $table            = 'toko';
     protected $primaryKey       = 'id_toko';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['id_toko','nama_toko','alamat_toko','bujur','lintang','fitur_minuman_dingin','fitur_es_krim','fitur_gas_galon','fitur_bensin','fitur_pulsa'];
+    protected $allowedFields    = ['id_toko','nama_toko','alamat_toko','bujur','lintang','fitur_minuman_dingin','fitur_es_krim','fitur_gas_galon','fitur_bensin','fitur_pulsa', 'tampilan_jalan'];
     
     public function __construct()
     {
@@ -28,7 +28,7 @@ class TokoModel extends Model
 
     public function getDataById($id)
     {
-        $this->builder->select('id_toko,nama_toko,alamat_toko,bujur,lintang,fitur_minuman_dingin,fitur_es_krim,fitur_gas_galon,fitur_bensin,fitur_pulsa');
+        $this->builder->select('id_toko,nama_toko,alamat_toko,bujur,lintang,fitur_minuman_dingin,fitur_es_krim,fitur_gas_galon,tampilan_jalan,fitur_bensin,fitur_pulsa');
         $query = $this->builder->getWhere(['id_toko' => $id]);
 
         return $query->getResultArray();
